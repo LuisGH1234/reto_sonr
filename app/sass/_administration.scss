@@ -1,0 +1,70 @@
+div.container-administration {
+    header .top {
+        height: 3.80em;
+        line-height: 3.80em;
+        background-color: black;
+        color: white;
+        padding: 4px 15px;
+
+        & > h2 {
+            font-weight: 600;
+        }
+    }
+
+    & > .bottom {
+        .left-side {
+            //le resto el header y los 8px de padding del div.top
+            height: calc(100vh - 3.80em - 8px - 5px);
+            width: 30%;
+            background-color: gray;
+            padding-top: 5px;
+            float: left;
+
+            .item {
+                border: 2px solid black;
+                height: 5%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                &:hover {
+                    background-color: black;
+                    & > * {
+                        color: white;
+                    }
+                }
+            }
+            & > a {
+                margin: auto;
+            }
+        }
+
+        .right-side {
+            padding: 10px;
+            float: left;
+            width: calc(70% - 20px);
+            height: calc(100vh - 3.80em - 8px - 20px);
+            & > a {
+                margin-left: 10px;
+
+                &:hover {
+                    color: blue;
+                }
+            }
+            .list-table {
+                border: 2px solid black;
+                margin-top: 10px;
+
+                table {
+                    thead tr {
+                        text-align: left;
+                    }
+                    tbody tr {
+                        border: 1px solid black;
+                    }
+                }
+            }
+
+        }
+    }
+}

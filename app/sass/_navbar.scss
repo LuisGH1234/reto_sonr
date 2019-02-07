@@ -1,0 +1,71 @@
+@mixin navbar-height ($nav-height, $nav-line-height) {
+    height: $nav-height;
+    line-height: $nav-line-height;
+}
+
+#logo-header {
+    font-family: 'Pacifico', cursive;
+    font-weight: 400;
+    font-size: 3em;
+    margin-left: 3px;
+}
+
+header div.navbar {
+    a {
+        padding: 0 10px 0 10px;
+        line-height: initial;
+    }
+    form {
+        line-height: initial;
+    }
+    .top-nav {
+        @include navbar-height(6.00rem, 6.00rem);
+        background-color: rgb(219, 219, 82);
+        position: relative;
+
+        .to-right {
+            &.top {
+                position: absolute;
+                top: 0;
+                right: 0;
+                padding: 4px 10px;
+            }
+
+            &.bottom {
+                position: absolute;
+                bottom: 0;
+                right: 0;
+                padding: 6px 10px;
+            }
+        }
+    }
+
+    .bot-nav {
+        @include navbar-height(3.00rem, 3.00rem);
+        border: 2px solid #24292e;
+        border-radius: 5px;
+        margin: 6px 10px 5px 10px;
+        background-color: #24292e;
+        box-shadow: 5px 10px 8px #888888;
+
+        .links {
+            display: flex;
+            justify-content: center;
+
+            a {
+                padding: 0 40px 0 40px;
+                color: #fff;
+                font-weight: 600;
+                line-height: inherit;
+
+                &:visited {
+                    color: #fff;
+                }
+
+                &:hover {
+                    color: rgb(140, 136, 207);
+                }
+            }
+        }
+    }
+}

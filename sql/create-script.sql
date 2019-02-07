@@ -25,3 +25,17 @@ create table producto (
     constraint producto_pk primary key (id),
     foreign key (categoria_id) references categoria(id)
 );
+
+ALTER TABLE producto MODIFY COLUMN descripcion varchar(150) not null;
+
+DROP procedure IF exists getProducto;
+DELIMITER //
+create procedure getProducto (in idProducto int)
+begin
+		select p.nombre, p.descripcion, p.precio, c.nombre 'categoria_nombre' from producto p
+        left join categoria c on p.categoria_id=c.id
+        where p.id=idProducto;
+end//
+DELIMITER ;
+
+call getProducto(1);

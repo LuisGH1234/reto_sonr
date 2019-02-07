@@ -1,15 +1,20 @@
-import React, { Component } from 'react';
-import { Switch, Route, Router } from 'react-router-dom';
+import React from 'react';
+import { Switch, Route, BrowserRouter as Router, Redirect } from 'react-router-dom';
 
-import App from './app';
+import AppLayout from './appLayout';
+import LoginPage from './loginPage';
+import Administration from './administracion';
 
 export default function (): JSX.Element {
     return (
-        <App>
+        <Router>
             <Switch>
-                <Route path="/in" component={() => <h5>Helo world 1</h5>}/>
-                <Route component={() => <h5>Page no found</h5>}/>
+                <Route exact path="/" render={() => <Redirect to="/categorias" />}/>
+                <Route path="/categorias" component={AppLayout}/>
+                <Route exact path="/login" component={LoginPage}/>
+                <Route path="/administracion" component={Administration}/>
+                <Route component={() => <h1>Page not found</h1>}/>
             </Switch>
-        </App>
+        </Router>
     );
 }

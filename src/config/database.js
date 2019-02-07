@@ -6,13 +6,13 @@ const mysqlConnection = mysql.createPool(myProfile);
 const { promisify } = require("util");
 mysqlConnection.query = promisify(mysqlConnection.query);
 
-async function init(query) {
+async function test() {
     try {
-        await mysqlConnection.query(query);
-        console.log("DB: connected");
+        await mysqlConnection.query('SELECT 1');
+        console.log("MySQL: connected".green);
     } catch (error) {
-        console.error(`Error database.js: \n${error}`);
+        console.error("Error database.js: ".bgRed + `\n${error}`);
     }
-}('select 1');
+};
 
-module.exports = mysqlConnection;
+module.exports = { mysqlConnection, test };
