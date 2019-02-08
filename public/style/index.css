@@ -84,6 +84,9 @@ table thead tr, table tbody tr {
   margin-left: 3px;
 }
 
+header div.navbar #admin-login:hover {
+  color: blue;
+}
 header div.navbar a {
   padding: 0 10px 0 10px;
   line-height: initial;
@@ -242,24 +245,34 @@ div.container-login-page .right-side {
   height: calc(100vh - 30%);
   width: calc(50% - 20px - 20px);
 }
-div.container-login-page .right-side form > .user, div.container-login-page .right-side form > .password {
+
+form.bordered {
+  border: 3px solid black;
+  border-radius: 10px;
+  margin: 10px;
+  padding: 10px;
+}
+form.bordered.none {
+  border: none;
+}
+form > .item {
   display: grid;
   padding: 10px;
   grid-template-columns: 150px 1fr;
   grid-template-rows: auto 1fr;
 }
-div.container-login-page .right-side form > .btn-submit {
+form > .btn-submit {
   margin: 10px;
   position: relative;
   height: 40px;
 }
-div.container-login-page .right-side form > .btn-submit input {
+form > .btn-submit input {
   position: absolute;
   top: 0;
   right: 0;
   bottom: 0;
 }
-div.container-login-page .right-side form > .btn-submit input:hover {
+form > .btn-submit input:hover {
   background-color: black;
   color: white;
 }
@@ -318,6 +331,13 @@ div.container-administration > .bottom .right-side .list-table table thead tr {
 }
 div.container-administration > .bottom .right-side .list-table table tbody tr {
   border: 1px solid black;
+}
+
+.modal .header {
+  font-weight: 400;
+  font-size: 2em;
+  margin-top: 5px;
+  margin-left: 20px;
 }
 
 /*# sourceMappingURL=index.css.map */

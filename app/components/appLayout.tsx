@@ -41,7 +41,7 @@ export default class AppLayout extends Component<IProps, IState> {
         key = key.toLowerCase();
         const { productos } = this.state;
         let newProductos: IProduct[] = productos.filter((producto, index) => {
-            const descripcion = producto.descripcion.toLowerCase();
+            const descripcion = producto.nombre.toLowerCase();
             if(descripcion.includes(key)){
                 return producto;
             }

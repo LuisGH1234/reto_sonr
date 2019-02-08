@@ -39,32 +39,44 @@ div.container-login-page {
         height: calc(100vh - 30%);
         width: calc(50% - 20px - 20px);
 
-        form {
-    
-            & > .user, & > .password {
-                display: grid;
-                padding: 10px;
-                grid-template-columns: 150px 1fr;
-                grid-template-rows: auto 1fr;
+        //
+    }
+}
 
-            }
+form {
+    &.bordered {
+        border: 3px solid black;
+        border-radius: 10px;
+        margin: 10px;
+        padding: 10px;
 
-            & > .btn-submit {
-                margin: 10px;
-                position: relative;
-                height: 40px;
+        &.none {
+            border: none;
+        }
+    }
 
-                input {
-                    position: absolute;
-                    top: 0;
-                    right: 0;
-                    bottom: 0;
+    & > .item {
+        display: grid;
+        padding: 10px;
+        grid-template-columns: 150px 1fr;
+        grid-template-rows: auto 1fr;
 
-                    &:hover {
-                        background-color: black;
-                        color: white;
-                    }
-                }
+    }
+
+    & > .btn-submit {
+        margin: 10px;
+        position: relative;
+        height: 40px;
+
+        input {
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+
+            &:hover {
+                background-color: black;
+                color: white;
             }
         }
     }

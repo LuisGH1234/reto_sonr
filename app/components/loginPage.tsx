@@ -22,11 +22,11 @@ export default class LoginPage extends Component<any> {
                 <div className="right-side">
                     <h1>Bienvenido</h1>
                     <form onSubmit={this.handleLogin}>
-                        <div className="user">
+                        <div className="user item">
                             <label htmlFor="user">Usuario: </label>
                             <input id="user" name="user" type="text"/>
                         </div>
-                        <div className="password">
+                        <div className="password item">
                             <label htmlFor="password">Contraseña: </label>
                             <input id="password" name="password" type="password"/>
                         </div>

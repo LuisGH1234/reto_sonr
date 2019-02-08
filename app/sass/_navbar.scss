@@ -11,6 +11,12 @@
 }
 
 header div.navbar {
+    #admin-login {
+        &:hover {
+            color: blue;
+        }        
+    }
+
     a {
         padding: 0 10px 0 10px;
         line-height: initial;

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Link, RouteComponentProps } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 interface IState {
     search: string
@@ -65,7 +65,8 @@ export default class NavBar extends Component<IProps, IState> {
                     onClick={(e)=>{this.props.fetchProducts!(0)}}>
                     Linio
                     </Link>
-                    <Link to="/login" className="to-right top">Administrador</Link>
+                    <Link to="/login" className="to-right top" id="admin-login">
+                    Administrador</Link>
                     <form onSubmit={this.handleSearch} className="to-right bottom">
                         <input id="box-search" placeholder="Search" name="search"
                          onChange={this.handleInputSearch}/>
