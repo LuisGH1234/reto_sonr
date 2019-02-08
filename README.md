@@ -4,7 +4,7 @@ E-commerce el cual cuenta con cuatro categorias de productos como Linea Blanca, 
 
 ## Caracteristicas
 
-El proyecto esta desarrollador en Node.js con el gestor de paquetes de dependecia `npm`. Utiliza el micro-framework Express.js para el lado del servidor. Por otra parte, en el lado del front-end utiliza React con Typescript y Webpack para transpilar el codigo a javascript del mas bajo nivel para que, en la medida de lo posible, cualquier navegador pueda interpretarlo. Ademas, se utilizo SASS como preprocesador de css para una mejor codificacion en la construccion de estilos de la pagina.
+El proyecto esta desarrollador en Node.js con el gestor de paquetes de dependecia `npm`. Utiliza el micro-framework Express.js para el lado del servidor. Por otra parte, en el lado del front-end utiliza React con Typescript y Webpack para transpilar el codigo a javascript del mas bajo nivel para que, en la medida de lo posible, cualquier navegador pueda interpretarlo. Ademas, se utilizo SASS como preprocesador de css para una mejor codificacion en la construccion de estilos de la pagina. Por ultimo, utiliza el motor de base de datos `MySQL`.
 
 ## Instalacion de dependencias
 
