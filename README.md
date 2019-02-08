@@ -1,4 +1,4 @@
-# ![Linio](/readme-sources/logo.png)
+# ![Linio](https://github.com/LuisGH1234/reto_sonr/blob/master/readme-sources/logo.PNG?raw=true)
 
 E-commerce el cual cuenta con cuatro categorias de productos como Linea Blanca, Ropa, Juguetes y Computo. Ademas, tiene un apartado administrativo para listar, agregar, editar y eliminar productos. 
 
@@ -89,7 +89,7 @@ npm run style
 
 #### Configuracion del Proyecto
 
-![Heroku](/readme-sources/heroku.png)
+![Heroku](https://github.com/LuisGH1234/reto_sonr/blob/master/readme-sources/heroku.PNG?raw=true)
 
 Para desplegar el proyecto en Heroku es necesario haber especificado en el archivo `package.json` el comando `"start": "node src/index.js"` (para este caso) y tener una cuenta.
 
