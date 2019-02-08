@@ -25,6 +25,7 @@ exports.getProducto = async (req, res) => {
 };
 
 exports.createProducto = async (req, res) => {
+    console.log("craeting p");
     const { categoria, nombre, descripcion, precio } = req.body;
     let sql = "insert into producto (nombre,descripcion,precio,categoria_id) values(?,?,?,?)";
     try {

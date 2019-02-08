@@ -21,6 +21,8 @@ npm install
 - [dotenv](https://github.com/motdotla/dotenv)
 - [morgan](https://github.com/expressjs/morgan)
 - [colors](https://github.com/Marak/colors.js)
+- [jwt-simple](https://github.com/hokaccha/node-jwt-simple)
+- [moment](http://momentjs.com/)
 
 ### Dependencias de Desarrollo
 
@@ -105,3 +107,15 @@ Finalmente, se selecciona la rama a desplegar y se da click a `Deploy Branch`. E
 #### Configuracion Base de Datos
 
 El manual para realizar la configuracion de base de datos se encuentra en este [link](https://upcedupe-my.sharepoint.com/:b:/g/personal/u201516808_upc_edu_pe/EWH-3wtd7ENNkuX-rEsl2ZEB9osBEHNL_Xv6G7ysIhMhDQ?e=5tnsKS)
+
+
+## Estado actual de la aplicacion
+
+1.- Solo se puede listar, actualizar, editar y eliminar productos. Debido a que, desde el principio la aplicacion ha tenido las categorias en duro en el lado del front-end.
+
+2.- Una vez que se a `Iniciado Sesion` y encontrado en la pagina `Administrativa`, si se desea actualizar la pagina este perdera el `Token` y lo redireccionara al `Login`.
+
+3.- El diseño de la pagina no es muy responsive por lo que en si se reduce el tamaño del navegador puede afectar el diseño de algunos elementos.
+
+4.- **La aplicacion no esta desplegada, sin embargo, el proceso de despliegue en heroku esta documentado en el apartado de `Despliegue`.**
+

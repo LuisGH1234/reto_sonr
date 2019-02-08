@@ -10,7 +10,7 @@ app.set("port", process.env.PORT || 3000);
 require("./config/database").test();
 
 //Middlewares
-app.use(morgan(process.env.NODE_ENV=="Development"?"dev":"combined"));
+app.use(morgan(process.env.NODE_ENV=="development"?"dev":"combined"));
 app.use(express.json());
 
 //Routes

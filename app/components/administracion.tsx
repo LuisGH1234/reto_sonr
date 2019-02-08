@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
 import Popup from 'reactjs-popup';
 
 import { IProduct } from './product';
@@ -13,8 +13,12 @@ interface IState {
     id: number
 }
 
-export default class Administation extends Component<any, any> {
-    constructor(props: any) {
+interface IProps {
+    token: string
+}
+
+export default class Administation extends Component<IProps, any> {
+    constructor(props: IProps) {
         super(props);
         this.state = {
             productos: [],
@@ -34,6 +38,11 @@ export default class Administation extends Component<any, any> {
 
     componentDidMount() {
         this.fetchProducts();
+    }
+
+    handleCerrarSesion() {
+        let inToken = document.getElementById("token") as HTMLInputElement;
+        inToken.value = "";
     }
 
     fetchProducts() {
@@ -74,6 +83,7 @@ export default class Administation extends Component<any, any> {
 
     handleProduct(e: React.FormEvent<HTMLFormElement>, close: () => void) {
         let url = "/api/productos/";
+        let inToken = document.getElementById("token") as HTMLInputElement;
         const { categoria_id, nombre, descripcion, precio, id } = this.state;
         if(id) {
             url += `${id}`;
@@ -82,6 +92,7 @@ export default class Administation extends Component<any, any> {
             method: this.state.id? 'PUT' : 'POST',
             body: JSON.stringify({ categoria:parseInt(categoria_id), nombre, descripcion, precio }),
             headers: {
+                'Authorization': `Bearer ${inToken.value}`,
                 'Accept': 'application/json',
                 'Content-Type': 'application/json'
             }
@@ -168,6 +179,10 @@ export default class Administation extends Component<any, any> {
     }
 
     public render(): JSX.Element {
+        let inToken = document.getElementById("token") as HTMLInputElement;
+        if(!inToken.value) {
+            return <Redirect to="/login" />
+        }
         const { productos } = this.state;
         return (
             <div className="container-administration">
@@ -188,7 +203,7 @@ export default class Administation extends Component<any, any> {
                             <a>Usuarios</a>
                         </div>
                         <div className="item">
-                            <Link to="/login">Cerrar Sesion</Link>
+                            <Link to="/login" onClick={this.handleCerrarSesion}>Cerrar Sesion</Link>
                         </div>
                     </div>
                     <div className="right-side">
