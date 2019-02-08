@@ -7,9 +7,10 @@
     "start": "node src/index.js",
     "start:dev": "nodemon src/index.js",
     "webpack:dev": "webpack --mode development --watch",
-    "build": "webpack --mode production",
-    "syle": "sass app/sass:public/style --style compressed",
-    "style:dev": "sass --watch app/sass:public/style --style expanded"
+    "webpack": "webpack --mode production",
+    "style": "sass app/sass:public/style --style compressed",
+    "style:dev": "sass --watch app/sass:public/style --style expanded",
+    "build:front": "npm run webpack && npm run style"
   },
   "keywords": [],
   "author": "Luis Galindo Honores",
