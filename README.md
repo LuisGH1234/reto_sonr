@@ -134,20 +134,20 @@ El manual para realizar la configuracion de base de datos se encuentra en este [
 
 Vista de listado de productos por categoria.
 
- ![Listado](/readme-sources/imagen1.png)
+ ![Listado](https://github.com/LuisGH1234/reto_sonr/blob/master/readme-sources/imagen1.PNG?raw=true)
 
 Vista de detalle producto.
 
- ![Detalles](/readme-sources/imagen2.png)
+ ![Detalles](https://github.com/LuisGH1234/reto_sonr/blob/master/readme-sources/imagen2.PNG?raw=true)
  
 Vista de iniciar sesion.
 
- ![Login](/readme-sources/imagen3.png)
+ ![Login](https://github.com/LuisGH1234/reto_sonr/blob/master/readme-sources/imagen3.PNG?raw=true)
 
 Vista administrativa para listar y eliminar.
 
- ![Administracion1](/readme-sources/imagen4.png)
+ ![Administracion1](https://github.com/LuisGH1234/reto_sonr/blob/master/readme-sources/imagen4.PNG?raw=true)
 
 Vista administrativa del `modal` para agregar y editar.
 
- ![Administracion2](/readme-sources/imagen5.png)
+ ![Administracion2](https://github.com/LuisGH1234/reto_sonr/blob/master/readme-sources/imagen5.PNG?raw=true)
