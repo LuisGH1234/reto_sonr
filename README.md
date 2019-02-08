@@ -108,6 +108,11 @@ Finalmente, se selecciona la rama a desplegar y se da click a `Deploy Branch`. E
 
 El manual para realizar la configuracion de base de datos se encuentra en este [link](https://upcedupe-my.sharepoint.com/:b:/g/personal/u201516808_upc_edu_pe/EWH-3wtd7ENNkuX-rEsl2ZEB9osBEHNL_Xv6G7ysIhMhDQ?e=5tnsKS)
 
+## Credenciales administrativas
+
+- usuario: `admin`
+
+- constraseña: `admin`
 
 ## Estado actual de la aplicacion
 
@@ -115,7 +120,34 @@ El manual para realizar la configuracion de base de datos se encuentra en este [
 
 2.- Una vez que se a `Iniciado Sesion` y encontrado en la pagina `Administrativa`, si se desea actualizar la pagina este perdera el `Token` y lo redireccionara al `Login`.
 
+3.- Si se ingresa mal las credenciales la aplicacion no indicara nada.
+
 3.- El diseño de la pagina no es muy responsive por lo que en si se reduce el tamaño del navegador puede afectar el diseño de algunos elementos.
 
 4.- **La aplicacion no esta desplegada, sin embargo, el proceso de despliegue en heroku esta documentado en el apartado de `Despliegue`.**
 
+5.- En la ruta raiz de la aplicacion se encuentra una carpeta `sql` que contiene el script de creacion de `Base de Datos` y `Tablas`, y otro archivo data master para insertar `registros` ya especificados.
+
+6.- En la ruta raiz se encuentra un archivo `.env` que contiene las variables de entorno. En el cual, estan las credenciales de base de datos entre otras. Este archivo no deberia estar en el repositorio remoto y deberia estar en el `.gitignore` pero por otras razones si esta. 
+
+## Imagenes
+
+Vista de listado de productos por categoria.
+
+ ![Listado](/readme-sources/imagen1.png)
+
+Vista de detalle producto.
+
+ ![Detalles](/readme-sources/imagen2.png)
+ 
+Vista de iniciar sesion.
+
+ ![Login](/readme-sources/imagen3.png)
+
+Vista administrativa para listar y eliminar.
+
+ ![Administracion1](/readme-sources/imagen4.png)
+
+Vista administrativa del `modal` para agregar y editar.
+
+ ![Administracion2](/readme-sources/imagen5.png)
