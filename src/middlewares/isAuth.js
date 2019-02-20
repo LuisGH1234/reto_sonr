@@ -7,7 +7,7 @@ function isAuth(req, res, next) {
 
     //Le quitamos el Bearer
     const token = req.headers.authorization.split(" ")[1];
-
+    
     decodeToken(token)
     .then(payload => {
         req.usuario = payload.usu;

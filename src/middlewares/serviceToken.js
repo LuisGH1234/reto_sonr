@@ -1,7 +1,7 @@
 const jwt = require('jwt-simple');
 const moment = require('moment');
 
-exports.createToken = (user) => {
+function createToken (user) {
     const payload = {
         usu: user.usuario,
         pwd: user.password,
@@ -11,7 +11,18 @@ exports.createToken = (user) => {
     return jwt.encode(payload, process.env.SECRET_TOKEN);
 }
 
-exports.decodeToken = (token) => {
+function createToken (req, res, next) {
+    const payload = {
+        usu: req.user.usuario,
+        pwd: req.user.passwordhash,
+        iat: moment().unix(),
+        exp: moment().add(12, 'days').unix()
+    };
+    req.token = jwt.encode(payload, process.env.SECRET_TOKEN);
+    next();
+}
+
+function decodeToken (token) {
     return new Promise((resolve, reject) => {
         try {
             
@@ -33,3 +44,8 @@ exports.decodeToken = (token) => {
         }
     });
 }
+
+module.exports = {
+    createToken,
+    decodeToken
+};

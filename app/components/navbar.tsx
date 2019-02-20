@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, RouteComponentProps } from 'react-router-dom';
 
 interface IState {
     search: string
 }
 
-interface IProps  {
+interface IProps {
     updateList: (key: string) => void,
     fetchProducts: (categoria?: number) => void
 }
@@ -21,10 +21,17 @@ export default class NavBar extends Component<IProps, IState> {
     }
 
     componentDidMount() {
+        /*const params = new URLSearchParams(window.location.search);
+        const search = params.get('search');
+        console.log(search);
+        if(search){
+            this.props.updateList(search);
+            return;
+        }*/
         if (performance.navigation.type == 1) {
             const { pathname } = window.location;
             const newUrl = pathname.slice(12, -5);
-            //console.log(newUrl);
+            console.log(pathname);
             switch(newUrl){
                 case "linea_blanca":
                     document.getElementById(newUrl)!.click();
@@ -43,11 +50,12 @@ export default class NavBar extends Component<IProps, IState> {
                     break;
             }
         }
+        
     }
-    private handleSearch(e: React.FormEvent<HTMLFormElement>) {
+    private handleSearch(e: React.FormEvent<HTMLFormElement | HTMLInputElement>) {
         e.preventDefault();
         const { search } = this.state;
-        this.props.updateList!(search);
+        this.props.updateList(search);
     }
 
     private handleInputSearch(e: React.ChangeEvent<HTMLInputElement>) {
@@ -58,6 +66,7 @@ export default class NavBar extends Component<IProps, IState> {
     }
 
     public render(): JSX.Element {
+        //onSubmit={this.handleSearch}
         return (
             <div className="navbar">
                 <div className="top-nav">
@@ -70,7 +79,7 @@ export default class NavBar extends Component<IProps, IState> {
                     <form onSubmit={this.handleSearch} className="to-right bottom">
                         <input id="box-search" placeholder="Search" name="search"
                          onChange={this.handleInputSearch}/>
-                        <input value="Search" type="submit" className="btn-search"/>
+                        <input value="Search" type="submit" className="btn-search" onClick={this.handleSearch}/>
                     </form>
                 </div>
                 <div className="bot-nav">
@@ -79,13 +88,13 @@ export default class NavBar extends Component<IProps, IState> {
                     onClick={(e)=>this.props.fetchProducts!(1)}>
                     Linea Blanca</Link>
                     <Link to={`/categorias/ropa/list`} id="ropa"
-                    onClick={(e)=>this.props.fetchProducts!(2)}>
+                    onClick={(e)=>this.props.fetchProducts!(11)}>
                     Ropa</Link>
                     <Link to={`/categorias/juguetes/list`} id="juguetes"
-                    onClick={(e)=>this.props.fetchProducts!(3)}>
+                    onClick={(e)=>this.props.fetchProducts!(21)}>
                     Juguetes</Link>
                     <Link to={`/categorias/computo/list`} id="computo"
-                    onClick={(e)=>this.props.fetchProducts!(4)}>
+                    onClick={(e)=>this.props.fetchProducts!(31)}>
                     Computo</Link>
                     </div>
                 </div>

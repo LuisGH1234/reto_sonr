@@ -38,4 +38,5 @@ begin
 end//
 DELIMITER ;
 
-call getProducto(1);
+ALTER TABLE usuario ADD COLUMN saltstamp text;
+ALTER TABLE usuario CHANGE COLUMN `password` `passwordhash` TEXT NOT NULL;

@@ -17,6 +17,6 @@ insert into producto (nombre,descripcion,precio,categoria_id) values ('HOODED TR
 insert into producto (nombre,descripcion,precio,categoria_id) values ('POLERA CON CAPUCHA TRIFOLIO OVERSIZE','Este/a modelo mide 182 cm y lleva una talla M. Su pecho mide 83 cm y su cintura, 71 cm.','200',2);
 select * from producto;
 
-insert into usuario (usuario, password) values ('admin', 'admin');
+insert into usuario (usuario, password) values ('admin', 'admin'); /* Deprecated */
 select * from usuario;
-select * from usuario where usuario='admin' and password='admin';
+select * from usuario where usuario='admin' and password='admin'; /* Deprecated */

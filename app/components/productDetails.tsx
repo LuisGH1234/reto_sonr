@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {  RouteComponentProps } from 'react-router-dom';
+import {  RouteComponentProps, Link } from 'react-router-dom';
 
 import { IProduct } from './product';
 
@@ -19,19 +19,21 @@ export default class ProductDetails extends Component<IProps, IProduct> {
             descripcion: "",
             precio: ""
         };
-    }
-
-    public componentDidMount() {
         this.fetchProduct();
     }
 
-    private fetchProduct() {
+    fetchProduct() {
         const { params } = this.props.match;
         fetch(`/api/productos/${params.idproducto}`)
         .then(res => res.json())
         .then(product => this.setState(product))
         .catch(console.error)
     }
+    /*async fetchProduct() {
+        const { params } = this.props.match;
+        const product = await (await fetch(`/api/productos/${params.idproducto}`)).json()
+        return product;
+    }*/
 
     public render(): JSX.Element {
         const { nombre, descripcion, precio, categoria_nombre } = this.state;
@@ -45,6 +47,7 @@ export default class ProductDetails extends Component<IProps, IProduct> {
                     </div>
                     <p className="precio">{ precio }</p>
                     <p className="descripcion">{ descripcion }</p>
+                    <Link to='/comprar' className="btn-compra" style={{border: "2px solid red" }}>Comprar</Link>
                 </div>
             </div>
         );

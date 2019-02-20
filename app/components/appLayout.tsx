@@ -30,6 +30,12 @@ export default class AppLayout extends Component<IProps, IState> {
         this.updateCategoria = this.updateCategoria.bind(this);
     }
 
+    componentDidMount() {
+        if(this.state.categoria === 0) {
+            this.fetchProducts(0);
+        }
+    }
+
     updateCategoria(categoria: number): void {
         this.setState({categoria});
     }
@@ -70,7 +76,7 @@ export default class AppLayout extends Component<IProps, IState> {
                         fetchProducts={this.fetchProducts}/>
                 </header>
                 <Switch>
-                    <Route exact={true} path="/categorias/list" render={
+                    <Route  path="/categorias/list" render={
                         (props) => <Products productos={this.state.tempProductos} 
                         {...props}/>}/>
                     <Route path="/categorias/linea_blanca/list" render={

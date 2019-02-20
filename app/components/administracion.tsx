@@ -157,9 +157,9 @@ export default class Administation extends Component<IProps, any> {
                                     onChange={this.handleInputChange}
                                     value={this.state.categoria_id}>
                                         <option value="1">Linea Blanca</option>
-                                        <option value="2">Ropa</option>
-                                        <option value="3">Juguetes</option>
-                                        <option value="4">Computo</option>
+                                        <option value="11">Ropa</option>
+                                        <option value="21">Juguetes</option>
+                                        <option value="31">Computo</option>
                                     </select>
                                 </div>
                                 <div className="item">

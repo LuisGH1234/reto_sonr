@@ -13,7 +13,6 @@ exports.getCategorias = async (req, res) => {
 exports.getProductosPorCategoria = async (req, res) => {
     let sql = "SELECT * FROM producto";
     if (req.params.id_categoria != 0) {
-        console.log(req.params.id_categoria);
         sql += ` WHERE categoria_id=${req.params.id_categoria}`;
     }
     try {
