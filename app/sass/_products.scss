@@ -38,6 +38,12 @@ div.container-product-detail {
         height: 60vh;
     }
 
+    a {
+        &.isDisabled {
+            cursor: not-allowed;
+        }
+    }
+
     .details {
         float: left;
         padding: 0 10px 0 10px;

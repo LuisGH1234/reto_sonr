@@ -6,7 +6,9 @@ export interface IProduct {
     descripcion: string, 
     precio: string,
     categoria_id?: number
-    categoria_nombre?: string
+    categoria_nombre?: string,
+    stock?: number,
+    reservado?: number
 }
 
 export class Product extends Component<IProduct> {

@@ -60,3 +60,29 @@ exports.deleteProducto = async (req, res) => {
         res.status(400).json({ status: "error" });
     }
 };
+
+exports.reservarProducto = async (req, res) => {
+    const { reservado } = req.query;
+    const { id } = req.params;
+    let sql = "call reservarProducto(?,?)";
+    try {
+        await mysqlConnection.query(sql, [reservado, id]);
+        res.status(200).json({ status: "ok" });
+    } catch (error) {
+        console.error(error);
+        res.status(400).json({ status: "error" });
+    }
+}
+
+exports.comprarProducto = async (req, res) => {
+    const { cantidad } = req.query;
+    const { id } = req.params;
+    let sql = "call comprarProducto(?,?)";
+    try {
+        await mysqlConnection.query(sql, [cantidad, id]);
+        res.status(200).json({ status: "ok" });
+    } catch (error) {
+        console.error(error);
+        res.status(400).json({ status: "error" });
+    }
+}

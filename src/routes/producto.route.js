@@ -9,4 +9,6 @@ route.post('/', isAuth, productoController.createProducto);
 route.put('/:id', isAuth, productoController.editProducto);
 route.delete('/:id', isAuth, productoController.deleteProducto);
 
+route.put('/reserva/:id', productoController.reservarProducto);
+route.put('/comprar/:id', productoController.comprarProducto);
 module.exports = route;
