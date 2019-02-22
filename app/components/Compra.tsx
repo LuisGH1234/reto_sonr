@@ -86,16 +86,21 @@ export class Compra extends Component<IProps, IState> {
         e.preventDefault();
         try {
             this.validarTarjeta();
-            const {idProducto,cantidad,pathname} = JSON.parse(localStorage.getItem("reserva")!);
-            return this.fetchCompra(idProducto, cantidad, pathname);
+            const {idProducto,cantidad,pathname,time} = JSON.parse(localStorage.getItem("reserva")!);
+            return this.fetchCompra(idProducto, cantidad, time, pathname);
         } catch (error) {
             let ele = document.getElementById("card") as HTMLLabelElement;
             ele.innerText = error.message;
         }
     }
-    fetchCompra(idProducto: number, cantidad: string, pathname: string) {
-        fetch(`/api/productos/comprar/${idProducto}?cantidad=${cantidad}`,{
-            method: 'PUT'
+    fetchCompra(idProducto: number, cantidad: string, time: number, pathname: string) {
+        fetch(`/api/productos/comprar/${idProducto}`,{
+            method: 'POST',
+            body: JSON.stringify({ cantidad, time, usuario: 1 }),
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+            }
         })
         .then(res => res.json())
         .then(data => {

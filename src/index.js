@@ -17,6 +17,7 @@ app.use(express.json());
 app.use('/api/categorias', require("./routes/categoria.route"));
 app.use('/api/productos', require("./routes/producto.route"));
 app.use('/api/user', require("./routes/usuario.route"));
+app.use('/api/ventas', require("./routes/venta.route"));
 
 //Setting static files
 app.use(express.static(join(__dirname, "../public")));

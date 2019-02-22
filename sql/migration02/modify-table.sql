@@ -48,3 +48,4 @@ DELIMITER ;
 
 call comprarProducto(2, 101);
 select * from producto where id=101;
+

@@ -75,11 +75,11 @@ exports.reservarProducto = async (req, res) => {
 }
 
 exports.comprarProducto = async (req, res) => {
-    const { cantidad } = req.query;
+    const { cantidad, time, usuario } = req.body;
     const { id } = req.params;
-    let sql = "call comprarProducto(?,?)";
+    let sql = "call comprarProducto(?,?,?,?)";
     try {
-        await mysqlConnection.query(sql, [cantidad, id]);
+        await mysqlConnection.query(sql, [cantidad, id, time, usuario]);
         res.status(200).json({ status: "ok" });
     } catch (error) {
         console.error(error);
