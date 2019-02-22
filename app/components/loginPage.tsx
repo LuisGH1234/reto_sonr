@@ -76,7 +76,7 @@ export default class LoginPage extends Component<any, IState> {
                             <input type="submit" value="Iniciar sesion" id="login"/>
                         </div>
                     </form>
-                    <Link to="/categorias" className="back-from-login">Regresar</Link>
+                    <Link to="/categorias/list" className="back-from-login">Regresar</Link>
                 </div>
             </div>
         );
